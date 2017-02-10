@@ -1,0 +1,83 @@
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">#00796B</item>
+    </style>
+
+    <style name="cardView" parent="CardView">
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_weight">3</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:background">@color/colorPrimaryDark</item>
+    </style>
+
+    <style name="cardViewLargeText" parent="CardView">
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textColor">@color/textColorOnCard</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:lineSpacingMultiplier">1.2</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="cardViewText" parent="CardView">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textColor">@color/textColorOnCard</item>
+        <item name="android:textSize">@dimen/in_quiz_card_text_size</item>
+    </style>
+
+    <style name="editText" >
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textColor">@color/textColorInQuestion</item>
+        <item name="android:layout_marginLeft">25dp</item>
+        <item name="android:layout_marginRight">25dp</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:hint">@string/your_answer_hint</item>
+        <item name="android:textSize">@dimen/edit_text_size</item>
+        <item name="android:ems">10</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:imeOptions">actionDone</item>
+    </style>
+
+    <style name="checkBox">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textSize">@dimen/check_box_text_size</item>
+        <item name="android:textColor">@color/textColorInQuestion</item>
+        <item name="android:layout_margin">2dp</item>
+    </style>
+
+    <style name="radioButton">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textSize">@dimen/radio_button_text_size</item>
+        <item name="android:textColor">@color/textColorInQuestion</item>
+    </style>
+
+    <style name="submitNextButtonStyle">
+        <item name="colorButtonNormal">#64B5F6</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <style name="endCheckBox">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textColor">@color/textColorInQuestion</item>
+        <item name="android:layout_margin">2dp</item>
+        <item name="android:textSize">@dimen/end_text_size</item>
+    </style>
+
+    <style name="endRadioButton">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textColor">@color/textColorInQuestion</item>
+        <item name="android:layout_margin">2dp</item>
+        <item name="android:textSize">@dimen/end_text_size</item>
+    </style>
+
+</resources>

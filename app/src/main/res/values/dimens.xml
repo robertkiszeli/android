@@ -1,0 +1,66 @@
+<resources>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+
+    <dimen name="app_theme_card_text_size">34sp</dimen>
+    <dimen name="in_quiz_card_text_size">20sp</dimen>
+    <dimen name="help_text_size">16sp</dimen>
+    <dimen name="start_card_text_size">20sp</dimen>
+    <dimen name="start_screen_edit_text_size">20sp</dimen>
+    <dimen name="edit_text_number_question_size">20sp</dimen>
+    <dimen name="edit_text_size">20sp</dimen>
+    <dimen name="edit_text_text_question_size">16sp</dimen>
+    <dimen name="edit_text_image_width">160dp</dimen>
+    <dimen name="check_box_question_size">20sp</dimen>
+    <dimen name="check_box_text_size">12sp</dimen>
+    <dimen name="radio_button_question_text_size">20sp</dimen>
+    <dimen name="radio_button_text_size">12sp</dimen>
+    <dimen name="end_text_size">16sp</dimen>
+    <dimen name="submit_button_text_size">20sp</dimen>
+
+
+    <dimen name="app_theme_card_text_size_landscape">30sp</dimen>
+    <dimen name="help_size_landscape">16sp</dimen>
+    <dimen name="start_screen_text_size_landscape">20sp</dimen>
+    <dimen name="edit_text_size_landscape">20sp</dimen>
+    <dimen name="edit_text_number_question_size_landscape">16sp</dimen>
+    <dimen name="edit_text_text_question_size_landscape">12sp</dimen>
+    <dimen name="check_box_question_size_landscape">12sp</dimen>
+    <dimen name="radio_button_question_size_landscape">16sp</dimen>
+    <dimen name="submit_button_text_size_landscape">20sp</dimen>
+
+
+    <dimen name="card_view_text_margin">12dp</dimen>
+    <dimen name="edit_text_number_question_margin">20dp</dimen>
+    <dimen name="edit_text_number_text_line_spacing">5dp</dimen>
+    <dimen name="edit_text_text_left_right_margin">20dp</dimen>
+    <dimen name="edit_text_text_text_line_spacing">5dp</dimen>
+    <dimen name="check_box_left_right_margin">20dp</dimen>
+    <dimen name="check_box_top_down_margin">5dp</dimen>
+    <dimen name="check_box_text_line_spacing">5dp</dimen>
+    <dimen name="radio_button_question_left_right_margin">20dp</dimen>
+    <dimen name="radio_button_question_top_bottom_margin">5dp</dimen>
+    <dimen name="radio_button_question_line_spacing">5dp</dimen>
+    <dimen name="scroll_view_margin">5dp</dimen>
+    <dimen name="scroll_view_linear_layout_margin">20dp</dimen>
+    <dimen name="scroll_view_linear_layout_padding">20dp</dimen>
+    <dimen name="submit_button_margin">20dp</dimen>
+
+    <dimen name="card_view_player_name_margin_landscape">12dp</dimen>
+    <dimen name="card_view_score_margin_landscape">12dp</dimen>
+    <dimen name="card_view_left_bottom_margin_landscape">12dp</dimen>
+    <dimen name="start_screen_question_left_right_margin_landscape">5dp</dimen>
+    <dimen name="start_screen_question_top_margin_landscape">20dp</dimen>
+    <dimen name="start_screen_edit_text_left_right_margin_landscape">20dp</dimen>
+    <dimen name="edit_text_number_question_margin_landscape">20dp</dimen>
+    <dimen name="edit_text_text_question_left_right_margin_landscape">20dp</dimen>
+    <dimen name="edit_text_text_bottom_margin">5dp</dimen>
+    <dimen name="check_box_question_margin_left_right_landscape">20dp</dimen>
+    <dimen name="check_box_question_margin_top_bottom_landscape">5dp</dimen>
+    <dimen name="radio_button_question_margin_left_right_landscape">20dp</dimen>
+    <dimen name="radio_button_question_margin_top_bottom_landscape">5dp</dimen>
+    <dimen name="scroll_view_margin_landscape">5dp</dimen>
+    <dimen name="scroll_view_linear_layout_margin_landscape">20dp</dimen>
+    <dimen name="scroll_view_linear_layout_padding_bottom_landscape">20dp</dimen>
+</resources>

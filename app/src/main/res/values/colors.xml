@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#B2CF57</color>
+    <color name="colorPrimaryDark">#78A417</color>
+    <color name="colorAccent">#C7FF59</color>
+
+    <color name="textColorOnCard">#FFFFFF</color>
+    <color name="textColorInQuestion">#000000</color>
+    <color name="textColorOnButton">#000000</color>
+
+
+</resources>

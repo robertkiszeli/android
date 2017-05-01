@@ -29,7 +29,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -69,7 +68,6 @@
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
                     android:layout_margin="@dimen/card_view_text_margin"/>
-
             </RelativeLayout>
 
             <LinearLayout
@@ -77,7 +75,6 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:background="@android:color/white">
-
                 <Button
                     style="@style/Widget.AppCompat.Button.Borderless.Colored"
                     android:layout_width="wrap_content"
@@ -95,13 +92,11 @@
     <LinearLayout
         android:id="@+id/quiz_end"
         style="@style/cardView"
-        android:visibility="gone"
-        >
+        android:visibility="gone">
         <TextView
             android:id="@+id/end_card_text"
             style="@style/cardViewLargeText"
             android:textSize="24sp"/>
-
     </LinearLayout>
 
     <!-- Start Screen Layout -->
@@ -157,7 +152,6 @@
         android:focusableInTouchMode="true"
         android:orientation="vertical"
         android:visibility="gone">
-
         <TextView
             android:id="@+id/edit_text_number_question"
             android:layout_width="match_parent"
@@ -168,13 +162,11 @@
             android:lineSpacingExtra="@dimen/edit_text_number_text_line_spacing"
             android:textColor="@color/textColorInQuestion"
             android:textSize="@dimen/edit_text_number_question_size"/>
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_gravity="center"
-            android:layout_weight="5"
-            >
+            android:layout_weight="5">
             <EditText
                 android:id="@+id/edit_text_number_answer"
                 style="@style/editText"
@@ -195,7 +187,6 @@
         android:focusableInTouchMode="true"
         android:orientation="vertical"
         android:visibility="gone">
-
         <TextView
             android:id="@+id/edit_text_text_question"
             android:layout_width="match_parent"
@@ -208,7 +199,6 @@
             android:lineSpacingExtra="@dimen/edit_text_text_text_line_spacing"
             android:textColor="@color/textColorInQuestion"
             android:textSize="@dimen/edit_text_text_question_size"/>
-
         <ImageView
             android:id="@+id/edit_text_text_image"
             android:layout_width="@dimen/edit_text_image_width"
@@ -216,7 +206,6 @@
             android:layout_gravity="center_horizontal"
             android:layout_weight="4"
             android:scaleType="centerCrop"/>
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -238,7 +227,6 @@
         android:gravity="center"
         android:orientation="vertical"
         android:visibility="gone">
-
         <TextView
             android:id="@+id/checkbox_question"
             android:layout_width="match_parent"
@@ -251,23 +239,18 @@
             android:lineSpacingExtra="@dimen/check_box_text_line_spacing"
             android:textColor="@color/textColorInQuestion"
             android:textSize="@dimen/check_box_question_size"/>
-
         <CheckBox
             android:id="@+id/answer_one_check"
             style="@style/checkBox"/>
-
         <CheckBox
             android:id="@+id/answer_two_check"
             style="@style/checkBox"/>
-
         <CheckBox
             android:id="@+id/answer_three_check"
             style="@style/checkBox"/>
-
         <CheckBox
             android:id="@+id/answer_four_check"
             style="@style/checkBox"/>
-
         <CheckBox
             android:id="@+id/answer_five_check"
             style="@style/checkBox"/>
@@ -282,7 +265,6 @@
         android:gravity="center_horizontal"
         android:orientation="vertical"
         android:visibility="gone">
-
         <TextView
             android:id="@+id/radio_button_question"
             android:layout_width="match_parent"
@@ -295,29 +277,23 @@
             android:lineSpacingExtra="@dimen/radio_button_question_line_spacing"
             android:textColor="@color/textColorInQuestion"
             android:textSize="@dimen/radio_button_question_text_size"/>
-
         <RadioGroup
             android:id="@+id/radio_group"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal">
-
             <RadioButton
                 android:id="@+id/answer_one_radio"
                 style="@style/radioButton"/>
-
             <RadioButton
                 android:id="@+id/answer_two_radio"
                 style="@style/radioButton"/>
-
             <RadioButton
                 android:id="@+id/answer_three_radio"
                 style="@style/radioButton"/>
-
             <RadioButton
                 android:id="@+id/answer_four_radio"
                 style="@style/radioButton"/>
-
             <RadioButton
                 android:id="@+id/answer_five_radio"
                 style="@style/radioButton"/>
@@ -332,13 +308,11 @@
         android:layout_weight="4"
         android:orientation="vertical"
         android:visibility="gone">
-
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="@dimen/scroll_view_margin"
             android:background="@color/colorAccent">
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -346,7 +320,6 @@
                 android:gravity="center_horizontal"
                 android:orientation="vertical"
                 android:paddingBottom="@dimen/scroll_view_linear_layout_padding">
-
                 <TextView
                     android:id="@+id/end_question_one"
                     android:layout_width="match_parent"
@@ -363,12 +336,10 @@
                     android:gravity="center"
                     android:textColor="@color/textColorInQuestion"
                     android:textSize="@dimen/end_text_size"/>
-
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="2dp"
                     android:background="@color/textColorOnButton"/>
-
                 <TextView
                     android:id="@+id/end_question_two"
                     android:layout_width="match_parent"
@@ -390,12 +361,10 @@
                     android:gravity="center"
                     android:textColor="@color/textColorInQuestion"
                     android:textSize="@dimen/end_text_size"/>
-
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="2dp"
                     android:background="@color/textColorOnButton"/>
-
                 <TextView
                     android:id="@+id/end_question_three"
                     android:layout_width="match_parent"
@@ -425,12 +394,10 @@
                         android:id="@+id/end_answer_check_five"
                         style="@style/endCheckBox"/>
                 </LinearLayout>
-
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="2dp"
                     android:background="@color/textColorOnButton"/>
-
                 <TextView
                     android:id="@+id/end_question_four"
                     android:layout_width="match_parent"
@@ -439,13 +406,11 @@
                     android:gravity="center"
                     android:textColor="@color/textColorInQuestion"
                     android:textSize="@dimen/end_text_size"/>
-
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:orientation="vertical">
-
                     <RadioButton
                         android:id="@+id/end_answer_radio_one"
                         style="@style/radioButton"/>
@@ -461,13 +426,9 @@
                     <RadioButton
                         android:id="@+id/end_answer_radio_five"
                         style="@style/radioButton"/>
-
                 </LinearLayout>
-
             </LinearLayout>
-
         </ScrollView>
-
     </LinearLayout>
 
     <Button

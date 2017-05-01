@@ -5,11 +5,9 @@ import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -19,7 +17,6 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -79,11 +76,8 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_main);
-
         //CHECK ANDROID VERSION
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP){
             appTheme = (CardView) findViewById(R.id.appTheme);
@@ -94,13 +88,11 @@ public class MainActivity extends AppCompatActivity {
             playerScoreLL = (LinearLayout) findViewById(R.id.playerScore);
             quizEndLL = (LinearLayout) findViewById(R.id.quiz_end);
         }
-
         //SET CARD TEXTVIEWS
         playerNameText = (TextView) findViewById(R.id.player_name_card_view);
         scoreText = (TextView) findViewById(R.id.score);
         quizLevel = (TextView) findViewById(R.id.quiz_level);
         quizRule = (TextView) findViewById(R.id.quiz_rule);
-
         //CREATE LAYOUTS
         quizLayouts = new ArrayList<>();
         quizLayouts.add((LinearLayout) findViewById(R.id.start_layout));
@@ -109,33 +101,27 @@ public class MainActivity extends AppCompatActivity {
         quizLayouts.add((LinearLayout) findViewById(R.id.quiz_checkbox));
         quizLayouts.add((LinearLayout) findViewById(R.id.quiz_radio_button));
         quizLayouts.add((LinearLayout) findViewById(R.id.quiz_end_layout));
-
         //SET EDIT TEXTS
         editTextNumberQuestion = (TextView) findViewById(R.id.edit_text_number_question);
         editTextNumberAnswer = (EditText) findViewById(R.id.edit_text_number_answer);
-
         //SET BUTTON
         submitNextButton = (Button) findViewById(R.id.submit_next_button);
-
         //SET BASE DATA
         actualView = 0;
         randomNumber = new Random();
-
         //SET ANIMATION
         animOut = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fade_out);
         animIn = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fade_in);
-
         //SET EDIT TEXT NUMBER QUIZ QUESTIONS
-        editTextNumberQuiz = new ArrayList();
+        editTextNumberQuiz = new ArrayList<>();
         editTextNumberQuiz.add(new EditTextQuiz(getString(R.string.edit_text_number_question_one),getString(R.string.edit_text_number_answer_one)));
         editTextNumberQuiz.add(new EditTextQuiz(getString(R.string.edit_text_number_question_two),getString(R.string.edit_text_number_answer_two)));
         editTextNumberQuiz.add(new EditTextQuiz(getString(R.string.edit_text_number_question_three),getString(R.string.edit_text_number_answer_three)));
         editTextNumberQuiz.add(new EditTextQuiz(getString(R.string.edit_text_number_question_four),getString(R.string.edit_text_number_answer_four)));
         editTextNumberQuiz.add(new EditTextQuiz(getString(R.string.edit_text_number_question_five),getString(R.string.edit_text_number_answer_five)));
         editTextNumberQuiz.add(new EditTextQuiz(getString(R.string.edit_text_number_question_six),getString(R.string.edit_text_number_answer_six)));
-
         //SET EDIT TEXT TEXT QUIZ QUESTIONS
-        editTextTextQuiz = new ArrayList();
+        editTextTextQuiz = new ArrayList<>();
         editTextTextQuiz.add(new EditTextQuiz(getString(R.string.edit_text_text_question),getString(R.string.edit_text_text_answer_one)));
         editTextTextQuiz.add(new EditTextQuiz(getString(R.string.edit_text_text_question),getString(R.string.edit_text_text_answer_two)));
         editTextTextQuiz.add(new EditTextQuiz(getString(R.string.edit_text_text_question),getString(R.string.edit_text_text_answer_three)));
@@ -148,9 +134,8 @@ public class MainActivity extends AppCompatActivity {
         editTextTextQuiz.add(new EditTextQuiz(getString(R.string.edit_text_text_question),getString(R.string.edit_text_text_answer_ten)));
         editTextTextQuiz.add(new EditTextQuiz(getString(R.string.edit_text_text_question),getString(R.string.edit_text_text_answer_eleven)));
         editTextTextQuiz.add(new EditTextQuiz(getString(R.string.edit_text_text_question),getString(R.string.edit_text_text_answer_twelve)));
-
         //SET CHECK BOX QUIZ QUESTIONS
-        checkQuiz = new ArrayList();
+        checkQuiz = new ArrayList<>();
         checkQuiz.add(new CheckRadioQuiz(getString(R.string.check_box_question_one),
                 getString(R.string.check_box_answer_three_one),getString(R.string.check_box_false),
                 getString(R.string.check_box_answer_one_two),getString(R.string.check_box_false),
@@ -163,27 +148,26 @@ public class MainActivity extends AppCompatActivity {
                 getString(R.string.check_box_answer_three_one),getString(R.string.check_box_true),
                 getString(R.string.check_box_answer_three_two),getString(R.string.check_box_true),
                 getString(R.string.check_box_answer_two_one),getString(R.string.check_box_false)));
-        checkQuiz.add(new CheckRadioQuiz("Which one(s) are real version of KITKAT ?",
+        checkQuiz.add(new CheckRadioQuiz(getString(R.string.check_box_question_three),
                 getString(R.string.check_box_answer_four_four),getString(R.string.check_box_true),
                 getString(R.string.check_box_answer_four_five),getString(R.string.check_box_false),
                 getString(R.string.check_box_answer_four_zero),getString(R.string.check_box_false),
                 getString(R.string.check_box_answer_three_two),getString(R.string.check_box_false),
                 getString(R.string.check_box_answer_four_three),getString(R.string.check_box_false)));
-        checkQuiz.add(new CheckRadioQuiz("Which one(s) are real version of JELLY BEAN ?",
+        checkQuiz.add(new CheckRadioQuiz(getString(R.string.check_box_question_four),
                 getString(R.string.check_box_answer_four_three),getString(R.string.check_box_true),
                 getString(R.string.check_box_answer_five_zero),getString(R.string.check_box_false),
                 getString(R.string.check_box_answer_four_two),getString(R.string.check_box_true),
                 getString(R.string.check_box_answer_four_zero),getString(R.string.check_box_false),
                 getString(R.string.check_box_answer_four_one),getString(R.string.check_box_true)));
-        checkQuiz.add(new CheckRadioQuiz("Which one(s) are real version of GINGERBREAD ?",
+        checkQuiz.add(new CheckRadioQuiz(getString(R.string.check_box_question_five),
                 getString(R.string.check_box_answer_two_two),getString(R.string.check_box_false),
                 getString(R.string.check_box_answer_one_eight),getString(R.string.check_box_false),
                 getString(R.string.check_box_answer_three_one),getString(R.string.check_box_false),
                 getString(R.string.check_box_answer_two_zero),getString(R.string.check_box_false),
                 getString(R.string.check_box_answer_two_three),getString(R.string.check_box_true)));
-
         //Set Radio Button Quiz Questions
-        radioQuiz = new ArrayList();
+        radioQuiz = new ArrayList<>();
         radioQuiz.add(new CheckRadioQuiz(getString(R.string.radio_button_question_one),
                 getString(R.string.radio_button_answer_one_one),getString(R.string.radio_button_false),
                 getString(R.string.radio_button_answer_one_two),getString(R.string.radio_button_false),
@@ -214,69 +198,48 @@ public class MainActivity extends AppCompatActivity {
                 getString(R.string.radio_button_answer_five_three),getString(R.string.radio_button_true),
                 getString(R.string.radio_button_answer_five_four),getString(R.string.radio_button_false),
                 getString(R.string.radio_button_answer_five_five),getString(R.string.radio_button_false)));
-
-
-
         //HANDLE ORIENTATION CHANGE
         if(savedInstanceState != null){
-
             orientationChanged = true;
-
-            playerName = savedInstanceState.getString("playerName");
-
-            playerNameText.setText(savedInstanceState.getString("playerName"));
-            scoreText.setText(savedInstanceState.getString("score"));
-            quizLevel.setText(savedInstanceState.getString("quizLevel"));
-            quizRule.setText(savedInstanceState.getString("quizRule"));
-            submitNextButton.setText(savedInstanceState.getString("submitNextButton"));
-
-            editTextNumberQuestion.setText(savedInstanceState.getString("quizOneQuestion"));
-            editTextNumberAnswer.setText(savedInstanceState.getString("quizOneAnswer"));
-
-            setRotateView(savedInstanceState.getInt("actualView"));
-
-            actualView = savedInstanceState.getInt("actualView");
-            editTextNumberRandom = savedInstanceState.getInt("editTextNumberRandom");
-            editTextTextRandom = savedInstanceState.getInt("editTextTextRandom");
-            checkBoxRandom = savedInstanceState.getInt("checkBoxRandom");
-            radioButtonRandom = savedInstanceState.getInt("radioButtonRandom");
-
+            playerName = savedInstanceState.getString(getString(R.string.player_name_istate));
+            playerNameText.setText(savedInstanceState.getString(getString(R.string.player_name_istate)));
+            scoreText.setText(savedInstanceState.getString(getString(R.string.score_istate)));
+            quizLevel.setText(savedInstanceState.getString(getString(R.string.quiz_level_istate)));
+            quizRule.setText(savedInstanceState.getString(getString(R.string.quiz_rule_istate)));
+            submitNextButton.setText(savedInstanceState.getString(getString(R.string.submit_next_button_istate)));
+            editTextNumberQuestion.setText(savedInstanceState.getString(getString(R.string.quiz_one_question_istate)));
+            editTextNumberAnswer.setText(savedInstanceState.getString(getString(R.string.quiz_one_answer_istate)));
+            setRotateView(savedInstanceState.getInt(getString(R.string.actual_view_istate)));
+            actualView = savedInstanceState.getInt(getString(R.string.actual_view_istate));
+            editTextNumberRandom = savedInstanceState.getInt(getString(R.string.edit_text_number_random_istate));
+            editTextTextRandom = savedInstanceState.getInt(getString(R.string.edit_text_text_random_istate));
+            checkBoxRandom = savedInstanceState.getInt(getString(R.string.check_box_random_istate));
+            radioButtonRandom = savedInstanceState.getInt(getString(R.string.radio_button_random_istate));
             for (int i = 1; i < 6; i++){
                 setQuiz(i);
             }
-
             orientationChanged = false;
         }
     }
 
     public void changeView(View view) {
-
         boolean wasIn = false;
-
         //VIEW CHANGE AT START,NEXT QUIZ AND SUMMARY
         if ((submitNextButton.getText().equals(getString(R.string.next_quiz))) ||
                 (submitNextButton.getText().equals(getString(R.string.start_quiz))) ||
                 (submitNextButton.getText().equals(getString(R.string.summary)))) {
-
             if(submitNextButton.getText().equals(getString(R.string.start_quiz))){
-
                 playerNameEditText = (EditText) findViewById(R.id.edit_player_name_text);
-
                 playerName = playerNameEditText.getText().toString();
-
                 playerNameEditText.setText("");
-
                 if (playerName.equals("")){
                     playerNameText.setText(R.string.player_name);
                 }else {
                     playerNameText.setText(playerName);
                 }
-
             }
-
             if (actualView < (quizLayouts.size() - 1)) {
                 if (actualView == 0) {
-
                     if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP){
                         playerScore.setVisibility(View.VISIBLE);
                         playerScore.startAnimation(animIn);
@@ -288,9 +251,7 @@ public class MainActivity extends AppCompatActivity {
                         appThemeLL.setVisibility(View.GONE);
                         appThemeLL.startAnimation(animOut);
                     }
-
                 }
-
                 if(actualView == 1){editTextNumberAnswer.setText("");}
                 if(actualView == 2){editTextTextAnswer.setText("");}
                 if(actualView == 3){
@@ -302,22 +263,17 @@ public class MainActivity extends AppCompatActivity {
                     RadioGroup radioGroup = (RadioGroup)findViewById(R.id.radio_group);
                     radioGroup.clearCheck();
                 }
-
                 quizLayouts.get(actualView).setVisibility(View.GONE);
                 quizLayouts.get(actualView).startAnimation(animOut);
                 actualView++;
                 quizLayouts.get(actualView).setVisibility(View.VISIBLE);
                 quizLayouts.get(actualView).startAnimation(animIn);
-
                 if(actualView != 5) {
                     submitNextButton.setText(R.string.submit_answer);
                     wasIn = true;
-
                     quizLevel.setText(getString(R.string.quiz_level) + actualView);
                     setQuiz(actualView);
                 }else{
-
-
                     if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP){
                         playerScore.setVisibility(View.GONE);
                         playerScore.startAnimation(animOut);
@@ -331,26 +287,22 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                     setQuiz(actualView);
-
                     submitNextButton.setText(R.string.restart);
                     wasIn = true;
                 }
             }
         }
-
         //HANDLE SUBMIT ANSWER BEFORE LAST VIEW
         if((submitNextButton.getText().equals(getString(R.string.submit_answer)))&&(actualView != 4)&&(!wasIn)){
             checkQuiz(actualView);
             submitNextButton.setText(R.string.next_quiz);
         }
-
         //HANDLE SUBMIT ANSWER ON LAST VIEW
         if((submitNextButton.getText().equals(getString(R.string.submit_answer))) && (actualView == 4)&&(!wasIn)) {
             checkQuiz(actualView);
             submitNextButton.setText(R.string.summary);
             wasIn = true;
         }
-
         //RESTART QUIZ
         if((submitNextButton.getText().equals(getString(R.string.restart))) && (actualView == 5)&&(!wasIn)) {
             quizLayouts.get(actualView).setVisibility(View.GONE);
@@ -362,7 +314,6 @@ public class MainActivity extends AppCompatActivity {
                 quizEndLL.setVisibility(View.GONE);
                 quizEndLL.startAnimation(animOut);
             }
-
             actualView = 0;
             quizLayouts.get(actualView).setVisibility(View.VISIBLE);
             quizLayouts.get(actualView).startAnimation(animIn);
@@ -373,50 +324,36 @@ public class MainActivity extends AppCompatActivity {
                 appThemeLL.setVisibility(View.VISIBLE);
                 appThemeLL.startAnimation(animIn);
             }
-
-
             submitNextButton.setText(getString(R.string.start_quiz));
-
             score = 0;
             scoreText.setText(getString(R.string.score_text) + score);
-
             for(CheckBox checkBox : checkBoxes){
                 checkBox.setEnabled(true);
                 checkBox.setChecked(false);
             }
-
             for(RadioButton radioButton : radioButtons){
                 radioButton.setEnabled(true);
                 radioButton.setChecked(false);
             }
-
             editTextNumberAnswer.setFocusable(true);
             editTextNumberAnswer.setFocusableInTouchMode(true);
-
             editTextTextAnswer.setFocusable(true);
             editTextTextAnswer.setFocusableInTouchMode(true);
-
         }
-
     }
-
     //HANDLE THE CARD VIEW HELP BUTTON
     public void shoeHelp(View view) {
-
         if(actualView != 2) {
-            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://en.wikipedia.org/wiki/Android_(operating_system)"));
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.wikipedia)));
             startActivity(intent);
         }else{
-            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.couponraja.in/theroyale/wp-content/uploads/2016/07/android_nougat_new_android_addition.jpg"));
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.picture)));
             startActivity(intent);
         }
-
         addScore = 3;
     }
-
     //SET QUIZ QUESTIONS ON ACTUAL VIEW
     public void setQuiz(int actualQuiz){
-
         switch (actualQuiz){
             case 1:
                 addScore = 5;
@@ -424,9 +361,8 @@ public class MainActivity extends AppCompatActivity {
                 if(!orientationChanged) {
                     editTextNumberRandom = randomNumber.nextInt(editTextNumberQuiz.size());
                 }
-                editNumberQuizData = new ArrayList(editTextNumberQuiz.get(editTextNumberRandom).getEditTextQuizData());
+                editNumberQuizData = new ArrayList<>(editTextNumberQuiz.get(editTextNumberRandom).getEditTextQuizData());
                 editTextNumberQuestion.setText(editNumberQuizData.get(0));
-
                 break;
             case 2:
                 addScore = 5;
@@ -434,13 +370,10 @@ public class MainActivity extends AppCompatActivity {
                 if(!orientationChanged) {
                     editTextTextRandom = randomNumber.nextInt(editTextTextQuiz.size()) ;
                 }
-                editTextQuizData = new ArrayList(editTextTextQuiz.get(editTextTextRandom).getEditTextQuizData());
-
+                editTextQuizData = new ArrayList<>(editTextTextQuiz.get(editTextTextRandom).getEditTextQuizData());
                 TextView editTextTextQuestion = (TextView) findViewById(R.id.edit_text_text_question);
                 editTextTextQuestion.setText(editTextQuizData.get(0));
-
                 ImageView imageView = (ImageView) findViewById(R.id.edit_text_text_image);
-
                 switch(editTextTextRandom){
                     case 0:imageView.setBackgroundResource(R.drawable.cupcake);
                         break;
@@ -475,24 +408,20 @@ public class MainActivity extends AppCompatActivity {
                 if(!orientationChanged) {
                     checkBoxRandom = randomNumber.nextInt(checkQuiz.size());
                 }
-                checkBoxQuizData = new ArrayList(checkQuiz.get(checkBoxRandom).getCheckRadioQuizData());
-
+                checkBoxQuizData = new ArrayList<>(checkQuiz.get(checkBoxRandom).getCheckRadioQuizData());
                 TextView checkBoxQuestion = (TextView) findViewById(R.id.checkbox_question);
                 checkBoxQuestion.setText(checkBoxQuizData.get(0));
-
-                checkBoxes = new ArrayList();
+                checkBoxes = new ArrayList<>();
                 checkBoxes.add((CheckBox) findViewById(R.id.answer_one_check));
                 checkBoxes.add((CheckBox) findViewById(R.id.answer_two_check));
                 checkBoxes.add((CheckBox) findViewById(R.id.answer_three_check));
                 checkBoxes.add((CheckBox) findViewById(R.id.answer_four_check));
                 checkBoxes.add((CheckBox) findViewById(R.id.answer_five_check));
-
                 int counterCheckBox = 1;
                 for(CheckBox checkBox : checkBoxes){
                     checkBox.setText(checkBoxQuizData.get(counterCheckBox));
                     counterCheckBox += 2;
                 }
-
                 break;
             case 4:
                 addScore = 5;
@@ -500,40 +429,33 @@ public class MainActivity extends AppCompatActivity {
                 if(!orientationChanged) {
                     radioButtonRandom = randomNumber.nextInt(radioQuiz.size());
                 }
-                radioQuizData = new ArrayList(radioQuiz.get(radioButtonRandom).getCheckRadioQuizData());
-
+                radioQuizData = new ArrayList<>(radioQuiz.get(radioButtonRandom).getCheckRadioQuizData());
                 TextView radioQuestion = (TextView) findViewById(R.id.radio_button_question);
                 radioQuestion.setText(radioQuizData.get(0));
-
-                radioButtons = new ArrayList();
+                radioButtons = new ArrayList<>();
                 radioButtons.add((RadioButton) findViewById(R.id.answer_one_radio));
                 radioButtons.add((RadioButton) findViewById(R.id.answer_two_radio));
                 radioButtons.add((RadioButton) findViewById(R.id.answer_three_radio));
                 radioButtons.add((RadioButton) findViewById(R.id.answer_four_radio));
                 radioButtons.add((RadioButton) findViewById(R.id.answer_five_radio));
-
                 int counterRadio = 1;
                 for(RadioButton radioButton : radioButtons){
                     radioButton.setText(radioQuizData.get(counterRadio));
                     counterRadio += 2;
                 }
-
                 break;
             case 5:
                 TextView endCardText = (TextView) findViewById(R.id.end_card_text);
                 endCardText.setText(getString(R.string.end_thank_first)+playerName+getString(R.string.end_thank_second)+score+getString(R.string.end_thank_third));
-
                 TextView questionOne = (TextView) findViewById(R.id.end_question_one);
                 questionOne.setText(editNumberQuizData.get(0));
                 TextView answerOne = (TextView) findViewById(R.id.end_answer_one);
                 answerOne.setText(editNumberQuizData.get(1));
-
                 TextView questionTwo = (TextView) findViewById(R.id.end_question_two);
                 questionTwo.setText(editTextQuizData.get(0));
                 TextView answerTwo = (TextView) findViewById(R.id.end_answer_two);
                 answerTwo.setText(editTextQuizData.get(1));
                 ImageView endImage = (ImageView) findViewById(R.id.end_image_view);
-
                 if(editTextQuizData.get(1).equals("CUPCAKE")){
                     endImage.setBackgroundResource(R.drawable.cupcake);
                 }
@@ -569,10 +491,9 @@ public class MainActivity extends AppCompatActivity {
                     case 11:endImage.setBackgroundResource(R.drawable.nougat);
                         break;
                 }
-
                 TextView questionThree = (TextView) findViewById(R.id.end_question_three);
                 questionThree.setText(checkBoxQuizData.get(0));
-                ArrayList<CheckBox> endCheckBoxes = new ArrayList();
+                ArrayList<CheckBox> endCheckBoxes = new ArrayList<>();
                 endCheckBoxes.add((CheckBox) findViewById(R.id.end_answer_check_one));
                 endCheckBoxes.add((CheckBox) findViewById(R.id.end_answer_check_two));
                 endCheckBoxes.add((CheckBox) findViewById(R.id.end_answer_check_three));
@@ -589,10 +510,9 @@ public class MainActivity extends AppCompatActivity {
                     endCheckBox.setEnabled(false);
                     boxCounter+=1;
                 }
-
                 TextView questionFour = (TextView) findViewById(R.id.end_question_four);
                 questionFour.setText(radioQuizData.get(0));
-                ArrayList<RadioButton> endRadioButtons = new ArrayList();
+                ArrayList<RadioButton> endRadioButtons = new ArrayList<>();
                 endRadioButtons.add((RadioButton) findViewById(R.id.end_answer_radio_one));
                 endRadioButtons.add((RadioButton) findViewById(R.id.end_answer_radio_two));
                 endRadioButtons.add((RadioButton) findViewById(R.id.end_answer_radio_three));
@@ -612,15 +532,13 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
     }
-
     //CHECK QUIZ ANSWER ON ACTUAL VIEW
     public void checkQuiz(int actualQuiz){
-
         switch(actualQuiz){
             case 1:
                 if(editTextNumberAnswer.getText().toString().equals(editNumberQuizData.get(1))){
                     Toast toast = Toast.makeText(getApplicationContext(),
-                            getString(R.string.wright_answer)+" +"+addScore+"score.",
+                            getString(R.string.wright_answer)+" +"+addScore+getString(R.string.score),
                             Toast.LENGTH_SHORT);
                     toast.show();
                     score += addScore;
@@ -635,9 +553,9 @@ public class MainActivity extends AppCompatActivity {
                 editTextNumberAnswer.setFocusableInTouchMode(false);
                 break;
             case 2:
-                if(editTextTextAnswer.getText().toString().toUpperCase().equals(editTextQuizData.get(1))){
+                if(editTextTextAnswer.getText().toString().trim().toUpperCase().equals(editTextQuizData.get(1))){
                     Toast toast = Toast.makeText(getApplicationContext(),
-                            getString(R.string.wright_answer)+" +"+addScore+"score.",
+                            getString(R.string.wright_answer)+" +"+addScore+getString(R.string.score),
                             Toast.LENGTH_SHORT);
                     toast.show();
                     score += addScore;
@@ -663,7 +581,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 if(wrightAnswersCheck == 5){
                     Toast toast = Toast.makeText(getApplicationContext(),
-                            getString(R.string.wright_answer)+" +"+addScore+"score.",
+                            getString(R.string.wright_answer)+" +"+addScore+getString(R.string.score),
                             Toast.LENGTH_SHORT);
                     toast.show();
                     score += addScore;
@@ -701,7 +619,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 if(wrightAnswersRadio == 1){
                     Toast toast = Toast.makeText(getApplicationContext(),
-                            getString(R.string.wright_answer)+" +"+addScore+"score.",
+                            getString(R.string.wright_answer)+" +"+addScore+getString(R.string.score),
                             Toast.LENGTH_SHORT);
                     toast.show();
                     score += addScore;
@@ -723,33 +641,25 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
     }
-
     //HANDLE ORIENTATION CHANGE
     @Override
     protected void onSaveInstanceState(Bundle outState) {
-
-        outState.putString("playerName",playerName);
-        outState.putString("score",scoreText.getText().toString());
-        outState.putString("quizLevel",quizLevel.getText().toString());
-        outState.putString("quizRule",quizRule.getText().toString());
-        outState.putString("submitNextButton",submitNextButton.getText().toString());
-
-        outState.putString("quizOneQuestion",editTextNumberQuestion.getText().toString());
-        outState.putString("quizOneAnswer",editTextNumberAnswer.getText().toString());
-
-
-        outState.putInt("actualView",actualView);
-        outState.putInt("editTextNumberRandom",editTextNumberRandom);
-        outState.putInt("editTextTextRandom",editTextTextRandom);
-        outState.putInt("checkBoxRandom",checkBoxRandom);
-        outState.putInt("radioButtonRandom",radioButtonRandom);
-
+        outState.putString(getString(R.string.player_name_istate),playerName);
+        outState.putString(getString(R.string.score_istate),scoreText.getText().toString());
+        outState.putString(getString(R.string.quiz_level_istate),quizLevel.getText().toString());
+        outState.putString(getString(R.string.quiz_rule_istate),quizRule.getText().toString());
+        outState.putString(getString(R.string.submit_next_button_istate),submitNextButton.getText().toString());
+        outState.putString(getString(R.string.quiz_one_question_istate),editTextNumberQuestion.getText().toString());
+        outState.putString(getString(R.string.quiz_one_answer_istate),editTextNumberAnswer.getText().toString());
+        outState.putInt(getString(R.string.actual_view_istate),actualView);
+        outState.putInt(getString(R.string.edit_text_number_random_istate),editTextNumberRandom);
+        outState.putInt(getString(R.string.edit_text_text_random_istate),editTextTextRandom);
+        outState.putInt(getString(R.string.check_box_random_istate),checkBoxRandom);
+        outState.putInt(getString(R.string.radio_button_random_istate),radioButtonRandom);
         super.onSaveInstanceState(outState);
     }
-
     //RECREATE VIEW AFTER ORIENTATION CHANGE
     private void setRotateView(int rotatedView){
-
         switch(rotatedView){
             case 0:
                 if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP){
@@ -761,14 +671,12 @@ public class MainActivity extends AppCompatActivity {
                     appThemeLL.setVisibility(View.VISIBLE);
                     quizEndLL.setVisibility(View.GONE);
                 }
-
                 quizLayouts.get(0).setVisibility(View.VISIBLE);
                 quizLayouts.get(1).setVisibility(View.GONE);
                 quizLayouts.get(2).setVisibility(View.GONE);
                 quizLayouts.get(3).setVisibility(View.GONE);
                 quizLayouts.get(4).setVisibility(View.GONE);
                 quizLayouts.get(5).setVisibility(View.GONE);
-
                 break;
             case 1:
                 if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP){
@@ -780,14 +688,12 @@ public class MainActivity extends AppCompatActivity {
                     appThemeLL.setVisibility(View.GONE);
                     quizEndLL.setVisibility(View.GONE);
                 }
-
                 quizLayouts.get(0).setVisibility(View.GONE);
                 quizLayouts.get(1).setVisibility(View.VISIBLE);
                 quizLayouts.get(2).setVisibility(View.GONE);
                 quizLayouts.get(3).setVisibility(View.GONE);
                 quizLayouts.get(4).setVisibility(View.GONE);
                 quizLayouts.get(5).setVisibility(View.GONE);
-
                 break;
             case 2:
                 if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP){

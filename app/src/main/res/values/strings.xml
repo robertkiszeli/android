@@ -38,6 +38,9 @@
 
     <string name="check_box_question_one">Which one(s) are real version of CUPCAKE ?</string>
     <string name="check_box_question_two">Which one(s) are real version of HONEYCOMB ?</string>
+    <string name="check_box_question_three">Which one(s) are real version of KITKAT ?</string>
+    <string name="check_box_question_four">Which one(s) are real version of JELLY BEAN ?</string>
+    <string name="check_box_question_five">Which one(s) are real version of GINGERBREAD ?</string>
     <string name="check_box_false">false</string>
     <string name="check_box_true">true</string>
     <string name="check_box_answer_one_two">1.2</string>
@@ -97,7 +100,7 @@
     <string name="restart">restart</string>
     <string name="next_quiz">next quiz</string>
     <string name="summary">summary</string>
-    <string name="score_text">"Score : "</string>
+    <string name="score_text">"Score : %i"</string>
     <string name="quiz_one_hint">The answer is a year!</string>
     <string name="quiz_two_hint">The answer is a code name!</string>
     <string name="quiz_three_hint">Check one or more!</string>
@@ -107,4 +110,21 @@
     <string name="end_thank_third">" \nCheck the wright answers."</string>
     <string name="wrong_answer">"The wright answer was "</string>
     <string name="wright_answer">"Your answer was correct ! </string>
+    <string name="score">score.</string>
+    <string name="wikipedia">https://en.wikipedia.org/wiki/Android_(operating_system)</string>
+    <string name="picture">https://www.couponraja.in/theroyale/wp-content/uploads/2016/07/android_nougat_new_android_addition.jpg</string>
+    <string name="score_value">Score: %i</string>
+    <string name="player_name_istate">playerName</string>
+    <string name="score_istate">score</string>
+    <string name="quiz_level_istate">quizLevel</string>
+    <string name="quiz_rule_istate">quizRule</string>
+    <string name="submit_next_button_istate">submitNextButton</string>
+    <string name="quiz_one_question_istate">quizOneQuestion</string>
+    <string name="quiz_one_answer_istate">quizOneAnswer</string>
+    <string name="actual_view_istate">actualView</string>
+    <string name="edit_text_number_random_istate">editTextNumberRandom</string>
+    <string name="edit_text_text_random_istate">editTextTextRandom</string>
+    <string name="check_box_random_istate">checkBoxRandom</string>
+    <string name="radio_button_random_istate">radioButtonRandom</string>
+
 </resources>

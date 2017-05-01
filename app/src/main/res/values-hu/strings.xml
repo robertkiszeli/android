@@ -38,6 +38,9 @@
 
     <string name="check_box_question_one">Mellyek a valós verziói a CUPCAKE-nek ?</string>
     <string name="check_box_question_two">Mellyek a valós verziói a HONEYCOMB-nak ?</string>
+    <string name="check_box_question_three">Mellyek a valós verziói a KITKAT-nek ?</string>
+    <string name="check_box_question_four">Mellyek a valós verziói a JELLY BEAN-nek ?</string>
+    <string name="check_box_question_five">Mellyek a valós verziói a GINGERBREAD-nek ?</string>
     <string name="check_box_false">false</string>
     <string name="check_box_true">true</string>
     <string name="check_box_answer_one_two">1.2</string>
@@ -107,5 +110,6 @@
     <string name="end_thank_third">" \nEllenőrizd a válaszokat."</string>
     <string name="wrong_answer">"A helyes válasz "</string>
     <string name="wright_answer">A válaszod helyes ! </string>
-
+    <string name="score">pont.</string>
+    <string name="score_value">Pontod: %i</string>
 </resources>

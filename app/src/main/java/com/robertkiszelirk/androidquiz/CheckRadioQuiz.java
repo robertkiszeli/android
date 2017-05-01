@@ -2,16 +2,16 @@ package com.robertkiszelirk.androidquiz;
 
 import java.util.ArrayList;
 
-public class CheckRadioQuiz{
+class CheckRadioQuiz{
 
-    ArrayList<String> list = new ArrayList();
+    private ArrayList<String> list = new ArrayList<>();
 
-    public CheckRadioQuiz(String question,
-                              String answerOne, String answerOneTF,
-                              String answerTwo, String answerTwoTF,
-                              String answerThree, String answerThreeTF,
-                              String answerFour, String answerFourTF,
-                              String answerFive, String answerFiveTF){
+    CheckRadioQuiz(String question,
+                   String answerOne, String answerOneTF,
+                   String answerTwo, String answerTwoTF,
+                   String answerThree, String answerThreeTF,
+                   String answerFour, String answerFourTF,
+                   String answerFive, String answerFiveTF){
 
         list.add(question);
         list.add(answerOne);
@@ -27,7 +27,7 @@ public class CheckRadioQuiz{
 
     }
 
-    public ArrayList<String> getCheckRadioQuizData(){
+    ArrayList<String> getCheckRadioQuizData(){
         return list;
     }
 

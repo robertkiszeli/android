@@ -29,13 +29,11 @@
         android:layout_width="0dp"
         android:layout_weight="1"
         android:id="@+id/playerScore"
-        android:visibility="gone"
-        >
+        android:visibility="gone">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -76,15 +74,12 @@
                     android:layout_alignParentBottom="true"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentLeft="true"/>
-
             </RelativeLayout>
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:background="@android:color/white">
-
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
@@ -105,21 +100,17 @@
         android:layout_width="0dp"
         android:layout_weight="1"
         android:id="@+id/quiz_end"
-        android:visibility="gone"
-        >
+        android:visibility="gone">
         <TextView
             style="@style/cardViewLargeText"
             android:id="@+id/end_card_text"
             android:textSize="24sp"/>
-
     </android.support.v7.widget.CardView>
-
     <LinearLayout
         android:layout_width="0dp"
         android:layout_weight="1"
         android:layout_height="match_parent"
         android:orientation="vertical">
-
         <!-- Start Screen Layout -->
         <LinearLayout
             android:layout_width="match_parent"
@@ -173,7 +164,6 @@
             android:visibility="gone"
             android:descendantFocusability="beforeDescendants"
             android:focusableInTouchMode="true">
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -184,13 +174,11 @@
                 android:textSize="@dimen/edit_text_number_question_size_landscape"
                 android:textColor="@color/textColorInQuestion"
                 android:lineSpacingExtra="10dp"/>
-
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="5"
-                android:layout_gravity="center"
-                >
+                android:layout_gravity="center">
                 <EditText
                     style="@style/editText"
                     android:id="@+id/edit_text_number_answer"
@@ -209,7 +197,6 @@
             android:visibility="gone"
             android:descendantFocusability="beforeDescendants"
             android:focusableInTouchMode="true">
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -222,7 +209,6 @@
                 android:textSize="@dimen/edit_text_text_question_size_landscape"
                 android:textColor="@color/textColorInQuestion"
                 android:lineSpacingExtra="10dp"/>
-
             <ImageView
                 android:layout_width="160dp"
                 android:layout_height="0dp"
@@ -230,7 +216,6 @@
                 android:id="@+id/edit_text_text_image"
                 android:layout_gravity="center_horizontal"
                 android:scaleType="centerCrop"/>
-
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -252,7 +237,6 @@
             android:orientation="vertical"
             android:visibility="gone"
             android:gravity="center">
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -265,21 +249,17 @@
                 android:textSize="@dimen/check_box_question_size_landscape"
                 android:textColor="@color/textColorInQuestion"
                 android:lineSpacingExtra="10dp"/>
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:gravity="center">
-
                 <CheckBox
                     style="@style/checkBox"
                     android:id="@+id/answer_one_check"/>
-
                 <CheckBox
                     style="@style/checkBox"
                     android:id="@+id/answer_two_check"/>
-
                 <CheckBox
                     style="@style/checkBox"
                     android:id="@+id/answer_three_check"/>
@@ -292,13 +272,10 @@
                 <CheckBox
                     style="@style/checkBox"
                     android:id="@+id/answer_four_check"/>
-
                 <CheckBox
                     style="@style/checkBox"
                     android:id="@+id/answer_five_check"/>
-
             </LinearLayout>
-
         </LinearLayout>
 
         <!-- RadioButton Quiz Layout -->
@@ -310,7 +287,6 @@
             android:orientation="vertical"
             android:visibility="gone"
             android:gravity="center_horizontal">
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -323,29 +299,23 @@
                 android:textColor="@color/textColorInQuestion"
                 android:gravity="center_horizontal"
                 android:lineSpacingExtra="10dp"/>
-
             <RadioGroup
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/radio_group"
                 android:gravity="center_horizontal">
-
                 <RadioButton
                     style="@style/radioButton"
                     android:id="@+id/answer_one_radio"/>
-
                 <RadioButton
                     style="@style/radioButton"
                     android:id="@+id/answer_two_radio"/>
-
                 <RadioButton
                     style="@style/radioButton"
                     android:id="@+id/answer_three_radio"/>
-
                 <RadioButton
                     style="@style/radioButton"
                     android:id="@+id/answer_four_radio"/>
-
                 <RadioButton
                     style="@style/radioButton"
                     android:id="@+id/answer_five_radio"/>
@@ -360,13 +330,11 @@
             android:layout_weight="4"
             android:orientation="vertical"
             android:visibility="gone">
-
                 <ScrollView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="@dimen/scroll_view_margin_landscape"
                     android:background="@color/colorAccent">
-
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -374,7 +342,6 @@
                             android:gravity="center_horizontal"
                             android:layout_margin="@dimen/scroll_view_linear_layout_margin_landscape"
                             android:paddingBottom="@dimen/scroll_view_linear_layout_padding_bottom_landscape">
-
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -391,12 +358,10 @@
                                 android:textColor="@color/textColorInQuestion"
                                 android:layout_margin="5dp"
                                 android:gravity="center"/>
-
                             <View
                                 android:layout_width="match_parent"
                                 android:layout_height="2dp"
                                 android:background="@color/textColorOnButton"/>
-
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -418,12 +383,10 @@
                                 android:textSize="@dimen/end_text_size"
                                 android:textColor="@color/textColorInQuestion"
                                 android:gravity="center"/>
-
                             <View
                                 android:layout_width="match_parent"
                                 android:layout_height="2dp"
                                 android:background="@color/textColorOnButton"/>
-
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -453,12 +416,10 @@
                                     style="@style/endCheckBox"
                                     android:id="@+id/end_answer_check_five"/>
                             </LinearLayout>
-
                             <View
                                 android:layout_width="match_parent"
                                 android:layout_height="2dp"
                                 android:background="@color/textColorOnButton"/>
-
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -467,7 +428,6 @@
                                 android:textColor="@color/textColorInQuestion"
                                 android:layout_margin="10dp"
                                 android:gravity="center"/>
-
                             <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -489,14 +449,10 @@
                                 <RadioButton
                                     style="@style/radioButton"
                                     android:id="@+id/end_answer_radio_five"/>
-
                             </LinearLayout>
-
                         </LinearLayout>
-
                     </ScrollView>
             </LinearLayout>
-
 
             <Button
             android:text="@string/start_quiz"
@@ -511,7 +467,6 @@
             android:layout_weight="1"
             android:onClick="changeView"
             android:background="@color/colorAccent"/>
-
 
     </LinearLayout>
 

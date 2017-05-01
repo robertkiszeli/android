@@ -111,5 +111,5 @@
     <string name="wrong_answer">"A helyes válasz "</string>
     <string name="wright_answer">A válaszod helyes ! </string>
     <string name="score">pont.</string>
-    <string name="score_value">Pontod: %i</string>
+    <string name="score_value">Pontod: </string>
 </resources>

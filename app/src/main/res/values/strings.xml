@@ -113,7 +113,7 @@
     <string name="score">score.</string>
     <string name="wikipedia">https://en.wikipedia.org/wiki/Android_(operating_system)</string>
     <string name="picture">https://www.couponraja.in/theroyale/wp-content/uploads/2016/07/android_nougat_new_android_addition.jpg</string>
-    <string name="score_value">Score: %i</string>
+    <string name="score_value">Score: </string>
     <string name="player_name_istate">playerName</string>
     <string name="score_istate">score</string>
     <string name="quiz_level_istate">quizLevel</string>

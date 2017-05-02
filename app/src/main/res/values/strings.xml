@@ -96,11 +96,11 @@
     <string name="radio_button_answer_five_five">Eclair</string>
     <string name="player_name">Player</string>
     <string name="submit_answer">submit answer</string>
-    <string name="quiz_level">"Quiz : "</string>
+    <string name="quiz_level">"Quiz : %2d"</string>
     <string name="restart">restart</string>
     <string name="next_quiz">next quiz</string>
     <string name="summary">summary</string>
-    <string name="score_text">"Score : %i"</string>
+    <string name="score_text">"Score : "</string>
     <string name="quiz_one_hint">The answer is a year!</string>
     <string name="quiz_two_hint">The answer is a code name!</string>
     <string name="quiz_three_hint">Check one or more!</string>

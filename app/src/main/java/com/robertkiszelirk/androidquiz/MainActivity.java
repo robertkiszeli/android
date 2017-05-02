@@ -203,7 +203,8 @@ public class MainActivity extends AppCompatActivity {
             orientationChanged = true;
             playerName = savedInstanceState.getString(getString(R.string.player_name_istate));
             playerNameText.setText(savedInstanceState.getString(getString(R.string.player_name_istate)));
-            scoreText.setText(savedInstanceState.getString(getString(R.string.score_istate)));
+            scoreText.setText(getString(R.string.score_value) + savedInstanceState.getInt(getString(R.string.score_istate)));
+            score = savedInstanceState.getInt(getString(R.string.score_istate));
             quizLevel.setText(savedInstanceState.getString(getString(R.string.quiz_level_istate)));
             quizRule.setText(savedInstanceState.getString(getString(R.string.quiz_rule_istate)));
             submitNextButton.setText(savedInstanceState.getString(getString(R.string.submit_next_button_istate)));
@@ -285,7 +286,6 @@ public class MainActivity extends AppCompatActivity {
                         quizEndLL.setVisibility(View.VISIBLE);
                         quizEndLL.startAnimation(animIn);
                     }
-
                     setQuiz(actualView);
                     submitNextButton.setText(R.string.restart);
                     wasIn = true;
@@ -645,12 +645,12 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         outState.putString(getString(R.string.player_name_istate),playerName);
-        outState.putString(getString(R.string.score_istate),scoreText.getText().toString());
         outState.putString(getString(R.string.quiz_level_istate),quizLevel.getText().toString());
         outState.putString(getString(R.string.quiz_rule_istate),quizRule.getText().toString());
         outState.putString(getString(R.string.submit_next_button_istate),submitNextButton.getText().toString());
         outState.putString(getString(R.string.quiz_one_question_istate),editTextNumberQuestion.getText().toString());
         outState.putString(getString(R.string.quiz_one_answer_istate),editTextNumberAnswer.getText().toString());
+        outState.putInt(getString(R.string.score_istate),score);
         outState.putInt(getString(R.string.actual_view_istate),actualView);
         outState.putInt(getString(R.string.edit_text_number_random_istate),editTextNumberRandom);
         outState.putInt(getString(R.string.edit_text_text_random_istate),editTextTextRandom);
